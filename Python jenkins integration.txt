@@ -1,0 +1,100 @@
+=================================
+================================
+To create connection to jenkins with python
+import jenkins
+j=jenkins.Jenkis("http:localhost:8080","admin","passowrdofjenkins")
+
+===================
+To check the jobs that are present in jenkins Server
+
+import jenkins
+j=jenkins.Jenkins("http://localhost:8080","admin","passwordofjenkins")
+print(j.get_jobs())
+
+================================
+
+To build the job in jenkins
+
+import jenkins
+j=jenkins.Jenkins("http://localhost:8080","admin","passwordofjenkins")
+j.build_job("Development")
+======================================
+
+To create a new jon
+
+import jenkins
+j=jenkins.Jenkins("http://localhost:8080","admin","passwordofjenkins")
+j.create_job("Sample",jenkins.EMPTY_CONFIG_XML)
+
+============================
+To copy job
+
+import jenkins
+j=jenkins.Jenkins("http://localhost:8080","admin","passwordofjenkins")
+j.copy_job("Development","NewDevelopment")
+
+
+==================================
+
+To delete th job
+
+import jenkins
+j=jenkins.Jenkins(http://localhost:8080","admin","passwordofjenkins")
+j.delete_job("NewDevelopment")
+
+==========================================
+
+To create multiple jobs
+
+import jenkins
+j=jenkins.Jenkins("http://localhost:8080","admin","passwordofjenkins")
+i=1
+while i<=10:
+      j.create_job("Sample%d"%i,jenkins.EMPTY_CONFIG_XML)
+      i=i+1
+
+========================
+
+To delete multiple jobd
+
+import jenkins
+j=jenkins.Jenkins("http://localhost:8080","admin","passwordofjenkins")
+i=1
+while i<=10:
+     j.delete_job("Sample%d"%i)
+     i=i+1
+==================================
+
+
+To Take backup of multiple jenkins job
+
+import jenkins
+j=jenkins.Jenkins("http://localhost:8080","admin","passwordofjenkins")
+i=1
+while i<=10:
+      j.copy_job("Development%d"%i,"NewDevelopment%d"%i)
+      i=i+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
